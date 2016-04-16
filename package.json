@@ -1,0 +1,9 @@
+{
+  "name": "language-proverif",
+  "version": "0.0.1",
+  "description": "Syntax highlight for proverif files",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  }
+}

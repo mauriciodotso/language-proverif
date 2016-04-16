@@ -1,0 +1,43 @@
+'scopeName': 'source.proverif'
+'name': 'Proverif'
+'fileTypes': ['pv']
+'patterns': [
+  {
+    'match': '\\b(process|equivalence)\\b'
+    'name': 'keyword.control.process.proverif'
+  }
+  {
+    'match': '\\b(data|private|typeConverter|memberOptim|block)\\b'
+    'name': 'keyword.control.modifiers.proverif'
+  }
+  {
+    'match': '\\b(process|equivalence)\\b'
+    'name': 'keyword.control.process.proverif'
+  }
+  {
+    'match': '\\=|<>|\\&\\&|\\|\\||\\||not|\\=\\=>'
+    'name': 'variable.language.operator.proverif'
+  }
+  {
+    'match': '\\btype\\b'
+    'name': 'storage.type.proverif'
+  }
+  {
+    'match': '\\battacker\\b'
+    'name': 'variable.language.attacker.proverif'
+  }
+  {
+    'begin': '\\(\\*'
+    'end': '\\*\\)'
+    'name': 'comment.block.proverif'
+  }
+  {
+    'match': '\\!'
+    'name': 'constant.language.unbounded.proverif'
+  }
+  {
+    #TODO create special rules to these
+    'match': 'type|channel|free|const|fun|letfun|reduc|forall|otherwise|equation|pred|table|let|set|event|query|noninterf|weaksecret|not|nounif|elimtrue|clauses|param|proba|proof|def|expand|putbegin|inj-event|new|let|phase'
+    'name': 'keyword.control.proverif'
+  }
+]
