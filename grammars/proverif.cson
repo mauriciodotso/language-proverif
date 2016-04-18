@@ -7,20 +7,54 @@
     'name': 'keyword.control.process.proverif'
   }
   {
-    'match': '\\b(data|private|typeConverter|memberOptim|block)\\b'
-    'name': 'keyword.control.modifiers.proverif'
+    'match': '\\=|<>|\\&\\&|\\|\\||\\||not|>'
+    'name': 'keyword.operator.operator.proverif'
   }
   {
-    'match': '\\b(process|equivalence)\\b'
-    'name': 'keyword.control.process.proverif'
+    'captures':
+      '1':
+        'name': 'keyword.language.proverif'
+      '2':
+        'name': 'entity.name.type.proverif'
+    'match': '(type) (.+)(\\.)'
+    'name': 'meta.type.proverif'
   }
   {
-    'match': '\\=|<>|\\&\\&|\\|\\||\\||not|\\=\\=>'
-    'name': 'variable.language.operator.proverif'
+    'captures':
+      '1':
+        'name': 'keyword.language.proverif'
+      '2':
+        'name': 'entity.name.function.proverif'
+      '4':
+        'name': 'entity.name.type.param.proverif'
+      '6':
+        'name': 'entity.name.type.return.proverif'
+    'match': '(fun) (.+)\\(((.+),?)*\\)\\:( )*(.+)(\\.)'
+    'name': 'meta.function.proverif'
   }
   {
-    'match': '\\btype\\b'
-    'name': 'storage.type.proverif'
+    'captures':
+      '1':
+        'name': 'keyword.language.event.proverif'
+      '2':
+        'name': 'entity.name.function.event.proverif'
+      '4':
+        'name': 'entity.name.type.param.proverif'
+    'match': '(event) (.+)\\(((.+),?)*\\)(\\.|;)'
+    'name': 'meta.event.proverif'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'keyword.language.free.proverif'
+      '3':
+        'name': 'entity.name.variable.proverif'
+      '5':
+        'name': 'entity.name.type.proverif'
+      '10':
+        'name': 'keyword.language.modifier.proverif'
+    'match': '(free)( )*(.+)\\:( )*((\\w|_)+)( )*(\\[((.+),?)*\\])?\\.'
+    'name': 'meta.free.proverif'
   }
   {
     'match': '\\battacker\\b'
@@ -30,6 +64,12 @@
     'begin': '\\(\\*'
     'end': '\\*\\)'
     'name': 'comment.block.proverif'
+    'patterns': [
+      {
+        'match': '\\bTODO\\b|\\bFIXME\\b|\\bXXX\\b'
+        'name': 'keyword.language.TODO.proverif'
+      }
+    ]
   }
   {
     'match': '\\!'
@@ -37,7 +77,7 @@
   }
   {
     #TODO create special rules to these
-    'match': 'type|channel|free|const|fun|letfun|reduc|forall|otherwise|equation|pred|table|let|set|event|query|noninterf|weaksecret|not|nounif|elimtrue|clauses|param|proba|proof|def|expand|putbegin|inj-event|new|let|phase'
+    'match': '\\bin\\b|\\bout\\b|bitstring|channel|const|letfun|reduc|forall|otherwise|equation|pred|table|let|set|query|noninterf|weaksecret|not|nounif|elimtrue|clauses|param|proba|proof|def|expand|putbegin|inj-event|new|let|phase'
     'name': 'keyword.control.proverif'
   }
 ]
